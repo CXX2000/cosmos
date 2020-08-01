@@ -1,0 +1,53 @@
+/* pages/me/me.wxss */
+/*image{
+  width:100px;
+  height:100px;
+  margin:0 auto;
+  display: block;
+  padding-top: 20px;
+}
+
+.name{
+  text-align: center;
+  padding-top: 10px;
+
+}
+
+button{
+  background: #8f6563;
+  width: 60%;
+  margin-top: 100px;
+  color: #ffffff;
+
+}*/
+
+.header {
+  margin: 90rpx 0 90rpx 50rpx;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  width: 650rpx;
+  height: 300rpx;
+  line-height: 450rpx;
+}
+
+.header image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.content {
+  margin-left: 50rpx;
+  margin-bottom: 90rpx;
+}
+
+.content text {
+  display: block;
+  color: #9d9d9d;
+  margin-top: 40rpx;
+}
+
+.bottom {
+  border-radius: 80rpx;
+  margin: 70rpx 50rpx;
+  font-size: 35rpx;
+}
