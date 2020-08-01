@@ -1,3 +1,39 @@
+<view class="user_header">
+  <view class="header_box">
+  
+    <image src="/image/头像.png"></image>
+    <button class="{{username == '点击登录' ? 'usernameDe' : 'username'}}" 
+    open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">点击登录</button>
+    
+    <image  src="{{userinfo.avatarUrl}}"></image><!--用户头像-->
+           <view>{{userinfo.nickName}}</view><!--用户名-->
+
+    <view class="qiandao">
+    </view>
+  </view>
+</view>
+<view class="user_main">
+  <view class="main_box">
+    <view class="box_item">
+      <image src="/image/消息通知.png" mode="widthFix"></image>
+      <text>消息通知</text>
+    </view>
+    <view class="box_item">
+      <image src="/image/收藏.png" mode="widthFix"></image>
+      <text>我的收藏</text>
+    </view>
+  </view>
+  <view class="main_box">
+    <view class="box_item">
+      <image src="/image/我发布的.png" mode="widthFix"></image>
+      <text>我发布的</text>
+    </view>
+    <view class="box_item">
+      <image src="/image/设置.png" mode="widthFix"></image>
+      <text>设置</text>
+    </view>
+  </view>
+</view>
 
 <view wx:if="{{!openid}}">
   <view wx:if="{{canIUse}}" >
@@ -28,28 +64,3 @@
            <view class="name">{{userinfo.nickName}}<!--用户名--></view>
     </view>
 </view>
-<!--
-
-<view wx:if="{{isHide}}">
-    <view wx:if="{{canIUse}}" >
-        <view class='header'>
-            <image src='/images/wx_login.png'></image>
-        </view>
- 
-        <view class='content'>
-            <view>申请获取以下权限</view>
-            <text>获得你的公开信息(昵称，头像等)</text>
-        </view>
- 
-        <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
-            授权登录
-        </button>
-    </view>
-    <view wx:else>请升级微信版本</view>
-</view>
- 
-<view wx:else>
-    <view>我的首页内容</view>
-</view>
-
--->
