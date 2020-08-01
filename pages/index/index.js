@@ -1,54 +1,92 @@
-//index.js
-//获取应用实例
-const app = getApp()
-
 Page({
+  // 页面初始数据
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+  search: {
+  searchValue: '',
+  showClearBtn: false
+      },
+  searchResult: []
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  onLoad: function (options) {
+  // 页面初始化 options为页面跳转所带来的参数
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
+  onReady: function () {
+  // 页面渲染完成
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+  onShow: function () {
+  // 页面显示
+  },
+  onHide: function () {
+  // 页面隐藏
+  },
+  onUnload: function () {
+  // 页面关闭
+  },
+  //输入内容时
+  searchActiveChangeinput: function (e) {
+  const val = e.detail.value;
+  this.setData({
+  'search.showClearBtn': val != '' ? true : false,
+  'search.searchValue': val
+  })
+  },
+  //点击清除搜索内容
+  searchActiveChangeclear: function (e) {
+  this.setData({
+  'search.showClearBtn': false,
+  'search.searchValue': ''
+  })
+  },
+  //点击聚集时
+  focusSearch: function () {
+  if (this.data.search.searchValue) {
+  this.setData({
+  'search.showClearBtn': true
+  })
+  } 
+  },
+  //搜索提交
+  searchSubmit: function () {
+  const val = this.data.search.searchValue;
+  if (val) {
+  const that = this,
+      app = getApp();
+  // 搜索中提示
+  wx.showToast({
+  title: '搜索中',
+  icon: 'loading' 
+  });
+  // 搜索请求路径
+  // 请根据自己实际情况填写路径，具体请看注意事项
+  wx.request({
+  url: app.globalData.API_URL + 'searchTeam',
+  data: {
+  keywords: val,
+  user_id: app.globalData.myInfo.user_id
+  },
+  method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+  // header: {}, // 设置请求的 header
+  success: function (res) {
+  // success 成功返回方法
+  let searchResult = res.data.data;
+  const len = searchResult.length;
+  for (let i = 0; i < len; i++) {
+  searchResult[i]['team_avator'] = app.globalData.STATIC_SOURCE + searchResult[i]['team_avator'];
   }
-})
+  that.setData({
+  searchResult: searchResult,
+  'search.showClearBtn': false,
+  })
+  },
+  fail: function () {
+  // fail 失败返回方法
+  },
+  complete: function () {
+  // complete
+  wx.hideToast();
+  } 
+  }) 
+  }   
+  }  
+  })
+  
