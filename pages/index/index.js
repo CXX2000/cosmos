@@ -1,3 +1,10 @@
+ //初始化云
+ wx.cloud.init({
+  env:'cosmos-cefkm',
+  traceUser:true
+});
+
+
 Page({
   data: {
       //判断小程序的API，回调，参数，组件等是否在当前版本可用。
@@ -52,6 +59,19 @@ Page({
           // 获取到用户的信息了，打印到控制台上看下
           console.log("用户的信息如下：");
           console.log(e.detail.userInfo);
+          //初始化数据库
+          const db=wx.cloud.database();
+          db.collection('user').add({
+            data:{
+              userInfo:e.detail.userInfo
+            },
+            success: res => {
+              //返回结果中会包含新创建的记录
+              this.setData({
+                userInfo:e.detail.userInfo
+              })
+            }
+          })
           //授权成功后,通过改变 isHide 的值，让实现页面显示出来，把授权页面隐藏起来
           that.setData({
               isHide: false
