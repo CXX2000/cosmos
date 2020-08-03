@@ -25,9 +25,9 @@
 </view>
 
 <!--跳转到各学科的页面-->
-<button class="btn1" bindtap='jumptozhexue' style="width:45vw">
-  <image class="btnimg1" src='../../image/zhexue.jpg' style="right:530rpx"></image>
-  <view style="margin-top:20rpx">哲学</view>
+<button class="btn1" bindtap='jumptozhexue' style="width:45vw"><!--width设置在style里，在wxss设置会无效-->
+  <image class="btnimg1" src='../../image/zhexue.jpg' style="right:530rpx"></image><!--right设置在style里，移动图标位置，但是不知道为什么设置left值却动不了-->
+  <view style="margin-top:20rpx">哲学</view><!--style里设置margin-top调整文字位置-->
 </button>
 
 <button class="btn2" bindtap='jumptojingjixue' style="width:45vw">

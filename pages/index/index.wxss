@@ -75,10 +75,10 @@ page{
   }
  
 /*设置学科按钮样式*/
-  .btn1:not([size='mini']){
+  .btn1:not([size='mini']){/*设置not([size='mini'])可以调按钮的大小*/
     background-color: white;
     margin-top: 40rpx;
-    position: fixed;
+    position: fixed;/*设置position: fixed可以调按钮位置*/
     left: 25rpx;
     height: 150rpx;
     line-height: 130rpx;
@@ -171,6 +171,7 @@ page{
     height: 150rpx;
     line-height: 130rpx;
   }
+  /*设置按钮中图标的样式*/
   .btnimg1{
     position: fixed;
     width: 60rpx;
