@@ -1,0 +1,87 @@
+<!-- 搜索框 -->
+<view class="search__top">
+  <form class='search__form' bindsubmit="searchSubmit">
+    <view class='search__box'>
+      <icon class='search__icon' type="search" size="13" color="#888" ></icon>
+        <input class="search__input" value="{{search.searchValue}}" placeholder="输入搜索内容" bindfocus="focusSearch" bindinput="searchActiveChangeinput" auto-focus="true" name="teamSearchKeyWords" />
+        <button wx:if="{{search.showClearBtn}}" catchtap="searchActiveChangeclear" form-type="reset" style="background:none;position:absolute;border:none;right:0;top:0;bottom:0;width:80rpx;">
+          <icon type="clear" size="19" color="#aaa" style="position:absolute;right:15rpx;top:10rpx;z-index:3;"></icon>
+        </button>
+    </view>
+  </form>
+</view>
+
+<!-- 搜索框输入内容是下方变化 -->
+<view class="panel" wx:if="{{search.showClearBtn}}" catchtap="searchSubmit">
+ <view class="search__form">
+  <view class="search__box2">
+   <view class="search__icon__box">
+    <icon class='search__icon2' type="search" size="24" color="#fff"></icon>
+   </view>
+   <view class='search__cell_primary'><text>搜索:</text><text style="margin-left:20rpx;color:#1AAD19;">{{search.searchValue}}</text>
+   </view>
+  </view>
+ </view>
+</view>
+
+<!--跳转到各学科的页面-->
+<button class="btn1" bindtap='jumptozhexue' style="width:45vw">
+  <image class="btnimg1" src='../../image/zhexue.jpg' style="right:530rpx"></image>
+  <view style="margin-top:20rpx">哲学</view>
+</button>
+
+<button class="btn2" bindtap='jumptojingjixue' style="width:45vw">
+  <image class="btnimg2" src='../../image/jingjixue.jpg' style="right:160rpx"></image>
+  <view style="margin-top:20rpx">经济学</view>
+</button>
+
+<button class="btn3" bindtap='jumptofaxue' style="width:45vw">
+  <image class="btnimg3" src='../../image/faxue.jpg' style="right:530rpx"></image>
+  <view style="margin-top:20rpx">法学</view>
+</button>
+
+<button class="btn4" bindtap='jumptojiaoyuxue' style="width:45vw">
+<image class="btnimg4" src='../../image/jiaoyuxue.jpg' style="right:160rpx"></image>
+  <view style="margin-top:20rpx">教育学</view>
+</button>
+
+<button class="btn5" bindtap='jumptowenxue' style="width:45vw">
+<image class="btnimg5" src='../../image/wenxue.jpg' style="right:530rpx"></image>
+  <view style="margin-top:20rpx">文学</view>
+</button>
+
+<button class="btn6" bindtap='jumptolishixue' style="width:45vw" >
+<image class="btnimg6" src='../../image/lishixue.jpg' style="right:160rpx"></image>
+  <view style="margin-top:20rpx">历史学</view>
+</button>
+
+<button class="btn7" bindtap='jumptolixue' style="width:45vw">
+<image class="btnimg7" src='../../image/lixue.jpg' style="right:530rpx"></image>
+  <view style="margin-top:20rpx">理学</view>
+</button>
+
+<button class="btn8" bindtap='jumptogongxue' style="width:45vw">
+<image class="btnimg8" src='../../image/gongxue.jpg' style="right:160rpx"></image>
+  <view style="margin-top:20rpx">工学</view>
+</button>
+
+<button class="btn9" bindtap='jumptonongxue' style="width:45vw">
+<image class="btnimg9" src='../../image/nongxue.jpg' style="right:530rpx"></image>
+  <view style="margin-top:20rpx">农学</view>
+</button>
+
+<button class="btn10" bindtap='jumptoyixue' style="width:45vw">
+<image class="btnimg10" src='../../image/yixue.jpg' style="right:160rpx"></image>
+  <view style="margin-top:20rpx">医学</view>
+</button>
+
+<button class="btn11" bindtap='jumptoguanlixue' style="width:45vw">
+<image class="btnimg11" src='../../image/guanlixue.jpg' style="right:530rpx"></image>
+  <view style="margin-top:20rpx">管理学</view>
+</button>
+
+<button class="btn12" bindtap='jumptoyishuxue' style="width:45vw">
+<image class="btnimg12" src='../../image/yishuxue.jpg' style="right:160rpx"></image>
+  <view style="margin-top:20rpx">艺术学</view>
+</button>
+

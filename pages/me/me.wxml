@@ -1,0 +1,54 @@
+<view wx:if="{{isHide}}">
+    <view wx:if="{{canIUse}}" >
+        <view class='header'>
+            
+        </view>
+ 
+        <view class='content'>
+            <view>申请获取以下权限</view>
+            <text>获得你的公开信息(昵称，头像等)</text>
+        </view>
+ 
+        <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+            授权登录
+        </button>
+    </view>
+    <view wx:else>请升级微信版本</view>
+</view>
+ 
+<view wx:else>
+  <view class="user_header">
+      <view class="header_box">
+            <image class="image" bindgetuserinfo="bindGetUserInfo" src="{{userinfo.avatarUrl}}"></image>
+            <button bindgetuserinfo="bindGetUserInfo">
+               <view class="name" bindgetuserinfo="bindGetUserInfo">{{userinfo.nickName}}</view>
+            </button>
+            <view class = "qiandao">
+            </view>
+      </view>
+  </view>
+
+  <view class="user_main">
+    <view class="main_box">
+      <view class="box_item">
+        <image src="/image/消息通知.png" mode="widthFix"></image>
+        <text>消息通知</text>
+      </view>
+      <view class="box_item">
+        <image src="/image/收藏.png" mode="widthFix"></image>
+        <text>我的收藏</text>
+      </view>
+    </view>
+    <view class="main_box">
+      <view class="box_item">
+        <image src="/image/我发布的.png" mode="widthFix"></image>
+        <text>我发布的</text>
+      </view>
+      <view class="box_item">
+        <image src="/image/设置.png" mode="widthFix"></image>
+        <text>设置</text>
+      </view>
+    </view>
+  </view>
+</view>
+

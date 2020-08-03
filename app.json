@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/me/me",
+    
+    "pages/logs/logs",
+    "pages/subject/zhexue/zhexue",
+    "pages/subject/jingjixue/jingjixue",
+    "pages/subject/faxue/faxue",
+    "pages/subject/jiaoyuxue/jiaoyuxue",
+    "pages/subject/wenxue/wenxue",
+    "pages/subject/lishixue/lishixue",
+    "pages/subject/lixue/lixue",
+    "pages/subject/gongxue/gongxue",
+    "pages/subject/nongxue/nongxue",
+    "pages/subject/yixue/yixue",
+    "pages/subject/guanlixue/guanlixue",
+    "pages/subject/yishuxue/yishuxue"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#7ce6b1",
+    "navigationBarTitleText": "COSMOS学吧",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7ce6b1",
+    "selectedColor": "000000",
+    "BackgroundColor": "#7ce6b1",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "社区",
+        "iconPath": "image/主页.png",
+        "selectedIconPath": "image/主页2.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "iconPath": "image/发布.png",
+        "selectedIconPath": "image/发布.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "image/我的.png",
+        "selectedIconPath": "image/我的2.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
