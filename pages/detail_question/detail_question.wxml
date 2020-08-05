@@ -1,0 +1,6 @@
+<!--没有进行布局，只是显示数据-->
+<view class="question">
+  <text class="name">{{qname}}</text>
+  <text class="subject">{{qsubject}}</text>
+  <view  class="content">{{qcontent}}</view>
+</view>

@@ -1,2 +1,11 @@
-<!--pages/subject/jingjixue/jingjixue.wxml-->
-<text>pages/subject/jingjixue/jingjixue.wxml</text>
+<view class="cell-bg" wx:for="{{question_list}}" wx:key="index" wx:if="{{item.subject=='经济学'}}">
+
+
+
+  <view class="right-view">
+    <view class="name">{{item.name}}</view>
+    <view class="content">{{item.content}}</view>
+    <view class="subject">{{item.subject}}</view>
+  </view>
+
+</view>

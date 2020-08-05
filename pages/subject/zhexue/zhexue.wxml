@@ -1,2 +1,19 @@
-<!--pages/subject/zhexue/zhexue.wxml-->
-<text>pages/subject/zhexue/zhexue.wxml</text>
+
+<view class="cell-bg" wx:for="{{question_list}}" wx:key="index" 
+wx:if="{{item.subject=='哲学'}}" bindtap="clickNew" data-bzid="{{item._id}}"
+data-index="{{index}}">
+<!--wx:if是对数据进行筛选，只显示subject为哲学的数据-->
+<!--bindtap是点击事件，用于传参跳转-->
+
+
+
+
+
+  <view class="right-view">
+    <view class="name">{{item.name}}</view>
+    <view class="content">{{item.content}}</view>
+    <view class="subject">{{item.subject}}</view>
+  </view>
+  <!--将提问者姓名、提问内容、学科显示在列表中-->
+
+</view>

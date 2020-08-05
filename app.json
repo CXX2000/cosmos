@@ -2,7 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/me/me",
-    
     "pages/logs/logs",
     "pages/subject/zhexue/zhexue",
     "pages/subject/jingjixue/jingjixue",
@@ -15,7 +14,8 @@
     "pages/subject/nongxue/nongxue",
     "pages/subject/yixue/yixue",
     "pages/subject/guanlixue/guanlixue",
-    "pages/subject/yishuxue/yishuxue"
+    "pages/subject/yishuxue/yishuxue",
+    "pages/detail_question/detail_question"
   ],
   "window": {
     "backgroundTextStyle": "light",
