@@ -1,8 +1,19 @@
-.log-list {
-  display: flex;
-  flex-direction: column;
-  padding: 40rpx;
+/* pages/logs/logs.wxss */
+
+.input-style{
+  width: 90%;
+  height: 200px;
+  border:1px solid #ccc;
+  margin:10px auto;
 }
-.log-item {
-  margin: 10rpx;
+ 
+.btn{
+  width: 88%;
+  margin:5px auto;
 }
+ 
+.liuyanview{
+  /*width: 90%;*/
+  margin: 10px;
+}
+

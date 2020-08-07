@@ -1,0 +1,8 @@
+/* pages/answer/answer.wxss */
+.btn1 {
+  width: 100% !important;
+  color: #71ca9e;
+  position: fixed;
+  bottom: 0px;
+  font-size: 40rpx;
+}

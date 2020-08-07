@@ -1,4 +1,4 @@
-// pages/logs/logs.js
+// pages/answer/answer.js
 Page({
 
   /**
@@ -62,18 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-
-  data:{
-    countries: ["哲学", "经济学", "法学","教育学","文学","历史学","理学","工学","农学","医学","管理学","艺术学"],
-        countryIndex: 0,
-  },
-  bindCountryChange: function(e) {
-    console.log('picker country 发生选择改变，携带值为', e.detail.value);
-
-    this.setData({
-        countryIndex: e.detail.value
-    })
-}
+  }
 })

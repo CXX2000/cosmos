@@ -1,7 +1,7 @@
 <view class="user_header">
   <view class="header_box">
-    <image src="{{userTx || defaultUrl}}"></image>
-    <button class="{{username == '点击登录' ? 'usernameDe' : 'username'}}" open-type="getUserInfo" bindgetuserinfo="getUserInfoHandler">{{username}}</button>
+    <image src="/image/头像.png"></image>
+    <button class="{{username == '点击登录' ? 'usernameDe' : 'username'}}" open-type="getUserinfo" bindgetuserinfo="getUserinfoHandler">点击登录</button>
     <view class="qiandao">
     </view>
   </view>
@@ -28,3 +28,55 @@
     </view>
   </view>
 </view>
+
+
+<view wx:if="{{!openid}}">
+  <view wx:if="{{canIUse}}" >
+        <view class='header'>
+            <image src='/images/wx_login.png'></image>
+        </view>
+ 
+        <view class='content'>
+            <view>申请获取以下权限</view>
+            <text>获得你的公开信息(昵称，头像等)</text>
+        </view>
+ 
+        <button class='bottom' type='primary' open-type="getUserInfo" 
+                lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+            授权登录
+        </button>
+
+        <view class="uploader-container"  wx:if="{{openid}}">
+           <image class="image" src="{{userinfo.avatarUrl}}"></image><!--用户头像-->
+           <view class="name">{{userinfo.nickName}}</view><!--用户名-->
+        </view>
+  </view>
+
+</view>
+<view wx:else>
+    <view class="uploader-container"  wx:if="{{openid}}">
+           <image class="image" src="{{userinfo.avatarUrl}}"></image><!--用户头像-->
+           <view class="name">{{userinfo.nickName}}<!--用户名--></view>
+    </view>
+</view>
+
+
+<view wx:if="{{isHide}}">
+    <view wx:if="{{canIUse}}" >
+        <view class='header'>
+            <image src='/images/wx_login.png'></image>
+        </view>
+ 
+        <view class='content'>
+            <view>申请获取以下权限</view>
+            <text>获得你的公开信息(昵称，头像等)</text>
+        </view>
+ 
+        <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+            授权登录
+        </button>
+    </view>
+</view>
+ 
+
+
