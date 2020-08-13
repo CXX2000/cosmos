@@ -8,12 +8,13 @@
   position: fixed;
   bottom: 30px;
   right: 20px;
-
   display: flex;
   justify-content: center;
   align-items: center;
   border:none;
   font-size: 50rpx;
+  background-color:#7ce6b1;
+  z-index: 999;
 }
 .btn4::after{
   border: none;
@@ -36,7 +37,6 @@
 
 .btn3 {
   background-color:transparent;
-
 }
 .btn3::after {
   border: none; 
@@ -62,10 +62,6 @@
   background: #fff;
 }
 
-.question-item .que-title{
-  padding: 0rpx 20rpx 30rpx;
-  font-size: 38rpx;
-}
 .question-item .que-content{
   padding: 0 20rpx;
   font-size: 26rpx;

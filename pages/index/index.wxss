@@ -1,7 +1,19 @@
+/* pages/index/index.wxss */
 page{
   background-color:#EFEFF4;
   }
-  
+  .searchbar-result{
+    margin-top:0;
+    font-size:14px
+  }
+  .searchbar-result .weui-cell__bd{
+    padding:2px 0 2px 20px;
+    color:var(--weui-FG-1)
+  }
+  .searchbar-result:before{
+    display:none
+  }
+
   .search__box {
   position: relative;
   padding-left: 30px;
@@ -73,3 +85,379 @@ page{
   padding-top: 30rpx;
   font-size:40rpx;
   }
+
+  .weui-search-bar{
+    background-color: #EFEFF4;
+    position: fixed;
+    width: 100%;
+    z-index: 101;
+    top: 0px;
+  }
+ 
+ .weui-cells__title{
+  font-size: 16px;
+}
+.main_title1{
+  padding-top: 11%;
+}
+
+.main_title2 .weui-cells__title{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.placeholder{
+  margin:5px;
+  padding:0 10px;
+  text-align:center;
+  font-size: 14px;
+  background-color:var#EFEFF4;
+  height:2.3em;
+  line-height:2.3em;
+  color:var#EFEFF4
+}
+
+
+/*设置学科按钮样式*/
+  .btn1:not([size='mini']){/*设置not([size='mini'])可以调按钮的大小*/
+    background-color: white;
+    margin-top: 20rpx;
+    position: absolute;/*设置position: fixed可以调按钮位置*/
+    left: 48rpx;
+    height: 150rpx;
+    line-height: 130rpx;
+  }
+  .btn2:not([size='mini']){
+    background-color: white;
+    margin-top: 20rpx;
+    position: absolute;
+    right: 48rpx;
+    height: 150rpx;
+    line-height: 130rpx;
+  }
+  .btn3:not([size='mini']){
+    background-color: white;
+    margin-top: 180rpx;
+    position: absolute;
+    left: 48rpx;
+    height: 150rpx;
+    line-height: 130rpx;
+  }
+  .btn4:not([size='mini']){
+    background-color: white;
+    margin-top: 180rpx;
+    position: absolute;
+    right: 48rpx;
+    height: 150rpx;
+    line-height: 130rpx;
+  }
+  .btn5:not([size='mini']){
+    background-color: white;
+    margin-top: 340rpx;
+    position: absolute;
+    left: 48rpx;
+    height: 150rpx;
+    line-height: 130rpx;
+  }
+  .btn6:not([size='mini']){
+    background-color: white;
+    margin-top: 340rpx;
+    position: absolute;
+    right: 48rpx;
+    height: 150rpx;
+    line-height: 130rpx;
+  }
+  .btn7:not([size='mini']){
+    background-color: white;
+    margin-top: 500rpx;
+    position: absolute;
+    left: 48rpx;
+    height: 150rpx;
+    line-height: 130rpx;
+  }
+  .btn8:not([size='mini']){
+    background-color: white;
+    margin-top: 500rpx;
+    position: absolute;
+    right: 48rpx;
+    height: 150rpx;
+    line-height: 130rpx;
+  }
+  .btn9:not([size='mini']){
+    background-color: white;
+    margin-top: 660rpx;
+    position: absolute;
+    left: 48rpx;
+    height: 150rpx;
+    line-height: 130rpx;
+  }
+  .btn10:not([size='mini']){
+    background-color: white;
+    margin-top: 660rpx;
+    position: absolute;
+    right: 48rpx;
+    height: 150rpx;
+    line-height: 130rpx;
+  }
+  .btn11:not([size='mini']){
+    background-color: white;
+    margin-top: 820rpx;
+    margin-bottom: 10rpx;
+    position: absolute;
+    left: 48rpx;
+    height: 150rpx;
+    line-height: 130rpx;
+  }
+  .btn12:not([size='mini']){
+    background-color: white;
+    margin-top: 820rpx;
+    margin-bottom: 10rpx;
+    position: absolute;
+    right: 48rpx;
+    height: 150rpx;
+    line-height: 130rpx;
+  }
+  /*设置按钮中图标的样式*/
+  .btnimg1{
+    position: absolute;
+    padding-top: 15rpx;
+    width: 90rpx;
+    height: 90rpx;
+  }
+  .btnimg2{
+    position: absolute;
+    padding-top: 15rpx;
+    width: 100rpx;
+    height: 100rpx;
+  }
+  .btnimg3{
+    position: absolute;
+    padding-top: 15rpx;
+    width: 90rpx;
+    height: 90rpx;
+  }
+  .btnimg4{
+    position: absolute;
+    padding-top: 15rpx;
+    width: 90rpx;
+    height: 90rpx;
+  }
+  .btnimg5{
+    position: absolute;
+    padding-top: 15rpx;
+    width: 90rpx;
+    height: 90rpx;
+  }
+  .btnimg6{
+    position: absolute;
+    padding-top: 15rpx;
+    width: 90rpx;
+    height: 90rpx;
+  }
+  .btnimg7{
+    position: absolute;
+    padding-top: 15rpx;
+    width: 90rpx;
+    height: 90rpx;
+  }
+  .btnimg8{
+    position: absolute;
+    padding-top: 15rpx;
+    width: 90rpx;
+    height: 90rpx;
+  }
+  .btnimg9{
+    position: absolute;
+    padding-bottom: 15rpx;
+    width: 120rpx;
+    height: 120rpx;
+  }
+  .btnimg10{
+    position: absolute;
+    padding-top: 15rpx;
+    width: 90rpx;
+    height: 90rpx;
+  }
+  .btnimg11{
+    position: absolute;
+    padding-top: 12rpx;
+    width: 110rpx;
+    height: 110rpx;
+  }
+  .btnimg12{
+    position: absolute;
+    padding-top: 20rpx;
+    width: 85rpx;
+    height: 85rpx;
+  }
+
+  .btn_text text{
+    display: block;
+    padding-top: 20rpx;
+    padding-left: 95rpx;
+    font-size: 35rpx;
+    color: #434343;
+    height: 80rpx;
+    line-height: 80rpx;
+  }
+
+  
+
+
+  .searchbar-result{
+    margin-top: 12%;
+    font-size: 14px;
+}
+ 
+/* 搜索列表名称 */
+.list_name{
+  position: relative;
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1rpx solid #ddd; 
+  
+}
+/* 列表名称 */
+.lab_name{
+  position: absolute;
+  left: 30rpx;
+}
+
+/* serch-index */
+/* 隐藏滚动条 */
+::-webkit-scrollbar{
+width: 0;
+height: 0;
+color: transparent;
+}
+
+.msg-item {
+  width: 100%;
+  height: 145rpx;
+  border-bottom: 1rpx solid rgb(233, 233, 233);
+  position: relative;
+  left:0;
+  top:0;
+  overflow: hidden;
+}
+
+.msg {
+  position: absolute;
+  
+  width: 100%;
+  height: 150rpx;
+  left:0;
+  top:0;
+  z-index: 100;
+  background-color: #FFF;
+}
+
+.header-img {
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  left: 20rpx;
+  top: 30rpx;
+  border-radius: 10%;
+}
+
+.site-img {
+  position: absolute;
+  width: 70rpx;
+  height: 70rpx;
+  right: 50rpx;
+  top: 40rpx;
+  border-radius: 10%;
+}
+.user-name {
+  position: absolute;
+  left: 150rpx;
+  top: 33rpx;
+  font-weight: 600;
+  font-size: 33rpx;
+}
+
+.msg-text {
+  position: absolute;
+  left: 150rpx;
+  bottom: 32rpx;
+  font-size: 70%;
+  color: rgb(127, 127, 127);
+}
+
+.msg-menu {
+  position: absolute;
+  width: 100%;
+  height: 150rpx;
+  left:0;
+  top:0;
+  z-index: 0;
+}
+
+.menu-delete {
+  position: absolute;
+  width: 150rpx;
+  height: 148rpx;
+  top:1rpx;
+  right: 0;
+  background-color: rgb(255, 58, 50);
+  color:#FFF;
+  text-align: center;
+  line-height:150rpx;
+}
+
+.menu-mark {
+  position: absolute;
+  width: 200rpx;
+  height: 148rpx;
+  top:1rpx;
+  right: 150rpx;
+  background-color: rgb(200, 199, 205);
+  color:#FFF;
+  text-align: center;
+  line-height:150rpx;
+}
+
+/* 滑动效果 */
+.inner.del {
+  position: absolute;
+  width: 300rpx;
+  height: 148rpx;
+  top: 1rpx;
+  right: -300rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 130rpx;
+}
+.draw {
+  border-right: 1px solid #fff;
+  display: inline-block;
+  width: 140rpx;
+  height: 142rpx;
+  background: #d6cdcd;
+}
+
+.delete {
+  display: inline-block;
+  width: 140rpx;
+  height: 142rpx;
+  background: #fd9903;
+}
+
+/*  end  */
+/* 搜索 */
+.weui-search-bar__input{
+  height: 72rpx;
+}
+.weui-icon-search_in-box{
+  top:22rpx;
+}
+.weui-search-bar__cancel-btn{
+  line-height:70rpx;
+  font-size: 14px;
+}
+.weui-icon-clear{
+  top:4rpx;
+}
+  

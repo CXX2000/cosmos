@@ -1,11 +1,7 @@
 <!--pages/detail_question/detail_question.wxml-->
-
 <view class="container">
     <view class="question-wrp">
         <view class="question-item">
-            <view class="que-title">
-                问题标题
-            </view>
             <view class="que-content">
                 问题的主要内容问题的主要内容问题的主要内容问题的主要内容问题的主要内容问题的主要内容问题的主要内容问题的主要内容问题的主要内容问题的主要内容问题的主要内容问题的主要内容问题的主要内容问题的主要内容问题的主要内容问题的主要内容
                 问题的主要内容问题的主要内容问题的主要内容问题的主要内容问题的主要内容问题的主要内容问题的主要内容问题的主要内容
@@ -17,11 +13,9 @@
     </view>      
 </view>       
 
-<button class="btn4" style="text-align: center; background-color:#7ce6b1" open-type="getUserInfo" bindgetuserinfo="onTapAnswer" >
+<button class="btn4" open-type="getUserInfo" bindgetuserinfo="onTapAnswer" >
   <text class="btn_da">答</text>
 </button>
-
-
 
 <view class="container">
     <view class="answer-feed">
@@ -51,7 +45,8 @@
         </view>
     </view>
 </view>
- 
+
+
 <view class="container">
     <view class="answer-feed">
         <view  bindtap="bindItemTap" class="feed-item">
@@ -80,7 +75,6 @@
         </view>
     </view>
 </view>
-
 <view class="container">
     <view class="answer-feed">
         <view  bindtap="bindItemTap" class="feed-item">
@@ -109,7 +103,6 @@
         </view>
     </view>
 </view>
-
 <view class="container">
     <view class="answer-feed">
         <view  bindtap="bindItemTap" class="feed-item">

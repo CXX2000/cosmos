@@ -17,3 +17,17 @@
   margin: 10px;
 }
 
+.weui-uploader__info {
+  float:right;
+}
+
+.weui-uploader__title{
+  float: left;
+  width:80%;
+}
+
+.weui-uploader__bd{
+  position: relative;
+  float: left;
+  padding-top: 10px;
+}

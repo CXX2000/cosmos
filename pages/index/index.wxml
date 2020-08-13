@@ -1,25 +1,156 @@
-<!-- 搜索框 -->
-<view class="search__top">
-  <form class='search__form' bindsubmit="searchSubmit">
-    <view class='search__box'>
-      <icon class='search__icon' type="search" size="13" color="#888" ></icon>
-        <input class="search__input" value="{{search.searchValue}}" placeholder="输入搜索内容" bindfocus="focusSearch" bindinput="searchActiveChangeinput" auto-focus="true" name="teamSearchKeyWords" />
-        <button wx:if="{{search.showClearBtn}}" catchtap="searchActiveChangeclear" form-type="reset" style="background:none;position:absolute;border:none;right:0;top:0;bottom:0;width:80rpx;">
-          <icon type="clear" size="19" color="#aaa" style="position:absolute;right:15rpx;top:10rpx;z-index:3;"></icon>
-        </button>
+<!--pages/index/index.wxml-->
+
+<view class="page" data-weui-theme="{{theme}}">
+	<view class="page__bd">
+		<view class="weui-search-bar {{inputShowed ? 'weui-search-bar_focusing' : ''}}" id="searchBar">
+			<form class="weui-search-bar__form">
+				<view class="weui-search-bar__box">
+					<i class="weui-icon-search"></i>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" 
+                    focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <span class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput"></span>
+				</view>
+				<label class="weui-search-bar__label" bindtap="showInput">
+					<i class="weui-icon-search"></i>
+                    <span class="weui-search-bar__text">搜索</span>
+				</label>
+			</form>
+            <view class="weui-search-bar__cancel-btn" bindtap="hideInput">取消</view>
+		</view>
+    <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+      <!-- 搜索列表 -->
+      <view class="weui-cell__bd" wx:for="{{list}}" wx:key="key">
+        <!-- 列表名称 -->
+        <view class='list_name'  data-index='{{index}}' data-id='{{item.userId}}' 
+        data-name='{{item.ques}}' bindtap='btn_name'>
+          <!-- 昵称 -->
+          <label class='lab_name'>{{item.ques}}</label>
+        </view>
+      </view>
+    </view> 
+  </view> 
+</view> 
+<!--搜索结果-->
+ <view class="item-box">
+  <view class="items">
+		<view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}"><!--输入的字符串长度-->
+		<view wx:for="{{search_list}}" wx:key="index" class="msg-item"><!--根据搜索个数决定行数-->
+      <view class='msg' style="{{item.txtStyle}}" bindtap='navmap' data-index="{{index}}" data-detail="{{item.question}}" ><!--navmap点击事件-->
+       <view class='carstate'  data-index="{{index}}" data-car="{{item.ques}}">
+         <image class='header-img' src="{{item.state == 5 ? '/image/wode2.png':'/image/wode.png'}}"></image>
+         <view class='user-name'>{{item.question}}</view>
+         <view class='msg-text'>{{item.QuserId}}</view>
+         <image class='site-img' data-id="{{item.userId}}" src="/image/wofabude.png" ></image>
+      </view>
+        <view class="inner del">
+          <span class="draw" data-index="{{index}}" data-name="{{item.ques}}" bindtap="tryDriver" >试驾</span>
+          <span class="delete" data-name="{{item.ques}}" bindtap="unBind">解绑</span>
+        </view>
+      </view>
     </view>
-  </form>
+</view>
+</view>
 </view>
 
-<!-- 搜索框输入内容是下方变化 -->
-<view class="panel" wx:if="{{search.showClearBtn}}" catchtap="searchSubmit">
- <view class="search__form">
-  <view class="search__box2">
-   <view class="search__icon__box">
-    <icon class='search__icon2' type="search" size="24" color="#fff"></icon>
-   </view>
-   <view class='search__cell_primary'><text>搜索:</text><text style="margin-left:20rpx;color:#1AAD19;">{{search.searchValue}}</text>
-   </view>
+<view wx:if="{{inputVal.length <= 0}}">
+  <view class="main_title1">
+    <view class="weui-cells__title">学吧热搜</view>
   </view>
- </view>
 </view>
+
+<view wx:if="{{inputVal.length <= 0}}">
+<view class="page" data-weui-theme="{{theme}}">
+<view class="page__bd page__bd_spacing">
+<view class="weui-flex">
+	<view class="weui-flex__item"><view class="placeholder">热搜</view></view>
+	<view class="weui-flex__item"><view class="placeholder">热搜</view></view>
+</view>
+<view class="weui-flex">
+	<view class="weui-flex__item"><view class="placeholder">热搜</view></view>
+	<view class="weui-flex__item"><view class="placeholder">热搜</view></view>
+</view>
+<view class="weui-flex">
+	<view class="weui-flex__item"><view class="placeholder">热搜</view></view>
+	<view class="weui-flex__item"><view class="placeholder">热搜</view></view>
+</view>
+<view class="weui-flex">
+	<view class="weui-flex__item"><view class="placeholder">热搜</view></view>
+	<view class="weui-flex__item"><view class="placeholder">热搜</view></view>
+</view>
+</view>
+</view>
+</view>
+
+<view wx:if="{{inputVal.length <= 0}}">
+  <view class="main_title2">
+    <view class="weui-cells__title">问题分类</view>
+  </view>
+</view>
+
+<!--跳转到各学科的页面-->
+  <view wx:if="{{inputVal.length <= 0}}">
+
+<button class="btn1" bindtap='jumptozhexue' style="width:40vw"><!--width设置在style里，在wxss设置会无效-->
+  <image class="btnimg1" src="cloud://cosmos-cefkm.636f-cosmos-cefkm-1302771022/subject/philosophy.png" style="left:20rpx"></image><!--right设置在style里，移动图标位置，但是不知道为什么设置left值却动不了-->
+  <view class="btn_text"><text>哲学</text></view><!--style里设置margin-top调整文字位置-->
+</button>
+
+<button class="btn2" bindtap='jumptojingjixue' style="width:40vw">
+  <image class="btnimg2" src="cloud://cosmos-cefkm.636f-cosmos-cefkm-1302771022/subject/economics.png" style="right:190rpx"></image>
+  <view class="btn_text"><text>经济学</text></view>
+</button>
+
+<button class="btn3" bindtap='jumptofaxue' style="width:40vw">
+  <image class="btnimg3" src="cloud://cosmos-cefkm.636f-cosmos-cefkm-1302771022/subject/law.png" style="left:20rpx"></image>
+  <view class="btn_text"><text>法学</text></view>
+</button>
+
+<button class="btn4" bindtap='jumptojiaoyuxue' style="width:40vw">
+<image class="btnimg4" src="cloud://cosmos-cefkm.636f-cosmos-cefkm-1302771022/subject/education.png" style="right:190rpx"></image>
+  <view class="btn_text"><text>教育学</text></view>
+</button>
+
+<button class="btn5" bindtap='jumptowenxue' style="width:40vw">
+<image class="btnimg5" src="cloud://cosmos-cefkm.636f-cosmos-cefkm-1302771022/subject/literature.png" style="left:20rpx"></image>
+  <view class="btn_text"><text>文学</text></view>
+</button>
+
+<button class="btn6" bindtap='jumptolishixue' style="width:40vw" >
+<image class="btnimg6" src="cloud://cosmos-cefkm.636f-cosmos-cefkm-1302771022/subject/history.png" style="right:190rpx"></image>
+  <view class="btn_text"><text>历史学</text></view>
+</button>
+
+<button class="btn7" bindtap='jumptolixue' style="width:40vw">
+<image class="btnimg7" src="cloud://cosmos-cefkm.636f-cosmos-cefkm-1302771022/subject/science.png" style="left:20rpx"></image>
+  <view class="btn_text"><text>理学</text></view>
+</button>
+
+<button class="btn8" bindtap='jumptogongxue' style="width:40vw">
+<image class="btnimg8" src="cloud://cosmos-cefkm.636f-cosmos-cefkm-1302771022/subject/engineering.png" style="right:190rpx"></image>
+  <view class="btn_text"><text>工学</text></view>
+</button>
+
+<button class="btn9" bindtap='jumptonongxue' style="width:40vw">
+<image class="btnimg9" src="cloud://cosmos-cefkm.636f-cosmos-cefkm-1302771022/agriculture.png" style="left:10rpx"></image>
+  <view class="btn_text"><text>农学</text></view>
+</button>
+
+<button class="btn10" bindtap='jumptoyixue' style="width:40vw">
+<image class="btnimg10" src="cloud://cosmos-cefkm.636f-cosmos-cefkm-1302771022/subject/medicine.png" style="right:190rpx"></image>
+  <view class="btn_text"><text>医学</text></view>
+</button>
+
+<button class="btn11" bindtap='jumptoguanlixue' style="width:40vw">
+<image class="btnimg11" src="cloud://cosmos-cefkm.636f-cosmos-cefkm-1302771022/subject/management.png" style="left:10rpx"></image>
+  <view class="btn_text"><text>管理学</text></view>
+</button>
+
+
+<button class="btn12" bindtap='jumptoyishuxue' style="width:40vw">
+<image class="btnimg12" src="cloud://cosmos-cefkm.636f-cosmos-cefkm-1302771022/subject/art.png" style="right:190rpx"></image>
+  <view class="btn_text"><text>艺术学</text></view>
+</button>
+
+</view>
+
+
